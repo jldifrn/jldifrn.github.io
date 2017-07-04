@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1499123995,
+	"version": 1499140074,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -88,6 +88,14 @@
 		"images/papiros-sheet0.png",
 		"images/credits-sheet0.png",
 		"images/sprite-sheet0.png",
+		"images/sprite21-sheet0.png",
+		"images/sprite22-sheet0.png",
+		"images/sprite23-sheet0.png",
+		"images/sprite24-sheet0.png",
+		"images/sprite25-sheet0.png",
+		"images/sprite26-sheet0.png",
+		"images/sprite27-sheet0.png",
+		"images/tiledbackground.png",
 		"media/explosion.m4a",
 		"media/explosion.ogg",
 		"media/gold.m4a",
