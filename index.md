@@ -12,9 +12,8 @@ Aluno de jogos digitais, criando portfólio com o professor @marcelomesmo
 
 ## Games
 1.**Pyramid Escape**
-[1º Bimestre](https://jldifrn.github.io/PyramidEscape)  
-2._Servidor de mensagens_    
-[2º Bimestre](https://jldifrn.github.io/ServidorDeMensagens)  
+[1º Bimestre](https://jldifrn.github.io/PyramidEscape)   
+2._Servidor de mensagens_   [2º Bimestre](https://jldifrn.github.io/ServidorDeMensagens)   
 3.**Ardenas Retake**  
 4._Bacteria_  
 
