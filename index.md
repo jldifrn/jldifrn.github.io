@@ -16,7 +16,6 @@ Aluno de jogos digitais, criando portfólio com o professor @marcelomesmo
 2._Servidor de mensagens_  
 [2º Bimestre](https://jldifrn.github.io/ServidorDeMensagens)
 3.**Ardenas Retake**  
-
 4._Bacteria_  
 
 [TEXTO QUE VAI APARECER](link)
