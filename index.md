@@ -20,7 +20,8 @@ Aluno de jogos digitais, criando portfólio com o professor @marcelomesmo
 [![](got.png)](https://jldifrn.github.io/ServidorDeMensagens)   
 3.**Ardenas Retake**
 [3º Bimestre](https://jldifrn.github.io/ArdenasRetake)    
-4._Bacteria_  
+4._Bacteria_
+[4º Bimestre](https://eriksonnicacio.github.io/bacteria2/)
 
 [TEXTO QUE VAI APARECER](link)
 * * *
