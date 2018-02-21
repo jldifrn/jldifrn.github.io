@@ -8,7 +8,7 @@ layout: default
 
 # Quem sou eu 
 
-Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), músico e gamer nas horas vagas.
+Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), 3º ano vespertino. Músico e gamer nas horas vagas.
 
 # Portfólio
 
