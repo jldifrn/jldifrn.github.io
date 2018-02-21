@@ -3,6 +3,7 @@ layout: default
 ---
 
 Criando **minha** _página_ ~~principal~~.
+![](1fotogithub.png)
 
 # Quem sou eu 
 
