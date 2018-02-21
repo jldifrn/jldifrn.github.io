@@ -2,12 +2,13 @@
 layout: default
 ---
 
-Criando **minha** _página_ ~~principal~~.
-![](1fotogithub.png)
+   ![](1fotogithub.png)   
+
+   José Luiz Dantas
 
 # Quem sou eu 
 
-Aluno de jogos digitais, criando portfólio com o professor @marcelomesmo
+Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), músico e gamer nas horas vagas.
 
 # Portfólio
 
