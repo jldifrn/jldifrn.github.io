@@ -14,6 +14,7 @@ Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), 3º ano vespertino.
 ## Games
 
 ### 2017
+Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Barros
 * * *
 
 ## 1.**Pyramid Escape**
