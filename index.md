@@ -38,7 +38,7 @@ Seja um bravo soldado e reconquiste o campo de batalha.
 3º Bimestre = Projeto Integrador
 Ajude a expulsar bacterias e vírus de vasos sanguíneos infectados.
 
-[TEXTO QUE VAI APARECER](link)
+
 * * *
 ## Artes
 
