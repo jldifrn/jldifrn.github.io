@@ -116,10 +116,10 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 
 ## Contato
 
-![](https://commons.wikimedia.org/wiki/File:F_icon.svg)
-![](https://logodownload.org/instagram-logo/)
-![](https://logodownload.org/twitter-logo/)
-![](https://freebiesupply.com/logos/steam-logo/)
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png)
+![](https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png)
+![](https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1.png)
+![](https://ih0.redbubble.net/image.470630233.2991/flat,800x800,075,t.u1.jpg)
 
 ** negrito  
 _ italico  
