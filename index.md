@@ -53,6 +53,41 @@ Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), 3º ano vespertino.
 * * *
 ## Artes
 
+### Texturas
+**Atividade de Design Gráfico - 2016**
+* * *
+![](astec.png)]
+Solo mapa astec - Csgo
+
+* * *
+
+![](mirage.png)
+Solo mapa mirage - Csgo
+
+* * *
+
+![](forhonor.png)
+Solo for honor
+
+
+### Animações
+#### Atividade de Multimidia e animação - 2017
+
+
+![](Animação1.gif)  
+Ataque espada 1  
+
+![](Animação2.gif)  
+Ataque espada 2  
+
+![](Animação3.gif)  
+Ciclo de caminhada  
+
+![](Animação4.gif)  
+Tirando chapeu  
+
+### Outros
+
 ![](http://i3.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png)
 ![](https://pbs.twimg.com/profile_images/649698177738801156/zN-cNA7Y.png)
 ![SK](sk.png)
