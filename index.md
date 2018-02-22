@@ -15,26 +15,25 @@ Aluno de programação Jogos Digitais (IFRN - Ceará-Mirim), 3º ano vespertino.
 * * *
 ### 2017
 1.**Pyramid Escape**
-[![](img.png)](https://jldifrn.github.io/PyramidEscape)   
+[![](pyramid.png)](https://jldifrn.github.io/PyramidEscape)   
 [1º Bimestre](https://jldifrn.github.io/PyramidEscape)   
 1º Bimestre = Tema:Cultura  
 Escape da pirâmide se não quiser ficar preso ao deus Seth para sempre.
 
 2._Servidor de mensagens_
-[![](img.png)](https://jldifrn.github.io/ServidorDeMensagens)   
+[![](servidordemensagens.png)](https://jldifrn.github.io/ServidorDeMensagens)   
 [2º Bimestre](https://jldifrn.github.io/ServidorDeMensagens)   
-[![](got.png)](https://jldifrn.github.io/ServidorDeMensagens)   
 2º Bimestre = Tema:Mensagem
 Entregue as encomendas e mantenha seu emprego.
 
 3.**Ardenas Retake**
-[![](img.png)](https://jldifrn.github.io/ArdenasRetake)   
+[![](ardenas.png)](https://jldifrn.github.io/ArdenasRetake)   
 [3º Bimestre](https://jldifrn.github.io/ArdenasRetake)
 3º Bimestre = Tema:Livre
 Seja um bravo soldado e reconquiste o campo de batalha.
 
 4._Bacteria_
-[![](img.png)](https://eriksonnicacio.github.io/bacteria2/)   
+[![](bacteria.png)](https://eriksonnicacio.github.io/bacteria2/)   
 [4º Bimestre](https://eriksonnicacio.github.io/bacteria2/)
 3º Bimestre = Projeto Integrador
 Ajude a expulsar bacterias e vírus de vasos sanguíneos infectados.
