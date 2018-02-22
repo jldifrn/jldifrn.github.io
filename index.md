@@ -95,12 +95,6 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 ![](Bisonho.png)  
 * Splash screen empresa de jogos
 
-
-![](http://i3.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png)
-![](https://pbs.twimg.com/profile_images/649698177738801156/zN-cNA7Y.png)
-![SK](sk.png)
-
-
 * * *
 
 ## Projetos de pesquisa
@@ -115,11 +109,10 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 * * *
 
 ## Contato
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png)
-![](https://logodownload.org/wp-content/uploads/2017/04/instagram-logo.png)
-![](https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-1.png)
-![](https://ih0.redbubble.net/image.470630233.2991/flat,800x800,075,t.u1.jpg)
+![Facebook](https://www.facebook.com/joseluiz.dantas.9)
+![Instagram](https://www.instagram.com/dantas.jl/)
+![Twitter](https://twitter.com/JoseLuizDL)
+![Steam](http://steamcommunity.com/profiles/76561198370725245/)
 
 ** negrito  
 _ italico  
