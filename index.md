@@ -72,7 +72,7 @@ Solo for honor
 
 
 ### Animações
-#### Atividade de Multimidia e animação - 2017
+#### Atividade de Multimidia e animação - Professor: Durval Pacheco
 
 
 ![](Animação1.gif)  
@@ -89,26 +89,28 @@ Tirando chapeu
 
 ### Outros
 
+![](Bisonho.png)  
+Splash screen empresa de jogos
 
 
 ![](http://i3.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png)
 ![](https://pbs.twimg.com/profile_images/649698177738801156/zN-cNA7Y.png)
 ![SK](sk.png)
 
-* Em breve
 
 * * *
-## Projetos
-* Em breve
+
+## Projetos de pesquisa
+* Geração Procedural em Motores de Jogos de baixo esforço  
+* Orientador: Marcelo de Barros Barbosa
+Relatorio: https://suap.ifrn.edu.br/media/upload/pesquisa/atividades/comprovantes/Relat%C3%B3rio_Projeto_Vers%C3%A3o2F.pdf)
+
 * * *
 ## Sons
 * Em breve
-* * *
-
-## Referencias
-* Em breve
 
 * * *
+
 
 ** negrito  
 _ italico  
