@@ -108,7 +108,7 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 
 * * *
 
-## Contato
+# Contato
 [Facebook](https://www.facebook.com/joseluiz.dantas.9)  
 [Instagram](https://www.instagram.com/dantas.jl/)  
 [Twitter](https://twitter.com/JoseLuizDL)  
