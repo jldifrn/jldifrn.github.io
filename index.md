@@ -100,7 +100,7 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 ## Projetos de pesquisa
 * Geração Procedural em Motores de Jogos de baixo esforço  
 * Orientador: Marcelo de Barros Barbosa
-* ![Relatorio](https://suap.ifrn.edu.br/media/upload/pesquisa/atividades/comprovantes/Relat%C3%B3rio_Projeto_Vers%C3%A3o2F.pdf)
+* [Relatorio](https://suap.ifrn.edu.br/media/upload/pesquisa/atividades/comprovantes/Relat%C3%B3rio_Projeto_Vers%C3%A3o2F.pdf)
 
 * * *
 ## Sons
