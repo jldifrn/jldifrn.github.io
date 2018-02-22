@@ -58,17 +58,17 @@ Atividades de Oficina de Criação de Jogos Digitais - Professor: Marcelo de Bar
 **Atividade de Design Gráfico - 2016**
 * * *
 ![](astec.png)
-Solo mapa astec - Csgo
+* Solo mapa astec - Csgo
 
 * * *
 
 ![](mirage.png)
-Solo mapa mirage - Csgo
+* Solo mapa mirage - Csgo
 
 * * *
 
 ![](forhonor.png)
-Solo for honor
+* Solo for honor
 
 
 ### Animações
@@ -76,24 +76,24 @@ Solo for honor
 
 * * *
 ![](Animação1.gif)  
-Ataque espada 1  
+* Ataque espada 1  
 
 * * *
 ![](Animação2.gif)  
-Ataque espada 2  
+* Ataque espada 2  
 
 * * *
 ![](Animação3.gif)  
-Ciclo de caminhada  
+* Ciclo de caminhada  
 
 * * *
 ![](Animação4.gif)  
-Tirando chapeu  
+* Tirando chapeu  
 
 ### Outros
 
 ![](Bisonho.png)  
-Splash screen empresa de jogos
+* Splash screen empresa de jogos
 
 
 ![](http://i3.kym-cdn.com/photos/images/newsfeed/001/176/251/4d7.png)
@@ -106,7 +106,7 @@ Splash screen empresa de jogos
 ## Projetos de pesquisa
 * Geração Procedural em Motores de Jogos de baixo esforço  
 * Orientador: Marcelo de Barros Barbosa
-Relatorio: https://suap.ifrn.edu.br/media/upload/pesquisa/atividades/comprovantes/Relat%C3%B3rio_Projeto_Vers%C3%A3o2F.pdf)
+* Relatorio: https://suap.ifrn.edu.br/media/upload/pesquisa/atividades/comprovantes/Relat%C3%B3rio_Projeto_Vers%C3%A3o2F.pdf)
 
 * * *
 ## Sons
