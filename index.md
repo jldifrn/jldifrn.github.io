@@ -74,16 +74,19 @@ Solo for honor
 ### Animações
 #### Atividade de Multimidia e animação - Professor: Durval Pacheco
 
-
+* * *
 ![](Animação1.gif)  
 Ataque espada 1  
 
+* * *
 ![](Animação2.gif)  
 Ataque espada 2  
 
+* * *
 ![](Animação3.gif)  
 Ciclo de caminhada  
 
+* * *
 ![](Animação4.gif)  
 Tirando chapeu  
 
