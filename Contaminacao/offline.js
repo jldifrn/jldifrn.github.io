@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1539482610,
+	"version": 1540098327,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -78,6 +78,10 @@
 		"images/hbarrasombra-sheet0.png",
 		"images/sfchave.png",
 		"images/adente-sheet0.png",
+		"images/sfpouso.png",
+		"images/bgtela-sheet0.png",
+		"images/brestart-sheet0.png",
+		"images/auxcheck-sheet0.png",
 		"media/andar.m4a",
 		"media/andar.ogg",
 		"media/cela.m4a",

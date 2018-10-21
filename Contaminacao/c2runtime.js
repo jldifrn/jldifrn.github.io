@@ -3735,9 +3735,13 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 					"powerPreference": "high-performance",
 					"failIfMajorPerformanceCaveat": true
 				};
-				this.gl = (this.canvas.getContext("webgl2", attribs) ||
-						   this.canvas.getContext("webgl", attribs) ||
-						   this.canvas.getContext("experimental-webgl", attribs));
+				if (!this.isAndroid)
+					this.gl = this.canvas.getContext("webgl2", attribs);
+				if (!this.gl)
+				{
+					this.gl = (this.canvas.getContext("webgl", attribs) ||
+							   this.canvas.getContext("experimental-webgl", attribs));
+				}
 			}
 		}
 		catch (e) {
@@ -3937,7 +3941,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		var isfullscreen = (document["mozFullScreen"] || document["webkitIsFullScreen"] || !!document["msFullscreenElement"] || document["fullScreen"] || this.isNodeFullscreen) && !this.isCordova;
 		if (!isfullscreen && this.fullscreen_mode === 0 && !force)
 			return;			// ignore size events when not fullscreen and not using a fullscreen-in-browser mode
-		if (isfullscreen && this.fullscreen_scaling > 0)
+		if (isfullscreen)
 			mode = this.fullscreen_scaling;
 		var dpr = this.devicePixelRatio;
 		if (mode >= 4)
@@ -3991,7 +3995,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 				}
 			}
 		}
-		else if (this.isNWjs && this.isNodeFullscreen && this.fullscreen_mode_set === 0)
+		else if (isfullscreen && mode === 0)
 		{
 			offx = Math.floor((w - this.original_width) / 2);
 			offy = Math.floor((h - this.original_height) / 2);
@@ -6417,6 +6421,43 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		}
 		inst.x = oldx;
 		inst.y = oldy;
+		inst.set_bbox_changed();
+		return false;
+	};
+	Runtime.prototype.pushOutSolidAxis = function(inst, xdir, ydir, dist)
+	{
+		dist = dist || 50;
+		var oldX = inst.x;
+		var oldY = inst.y;
+		var lastOverlapped = null;
+		var secondLastOverlapped = null;
+		var i, which, sign;
+		for (i = 0; i < dist; ++i)
+		{
+			for (which = 0; which < 2; ++which)
+			{
+				sign = which * 2 - 1;		// -1 or 1
+				inst.x = oldX + (xdir * i * sign);
+				inst.y = oldY + (ydir * i * sign);
+				inst.set_bbox_changed();
+				if (!this.testOverlap(inst, lastOverlapped))
+				{
+					lastOverlapped = this.testOverlapSolid(inst);
+					if (lastOverlapped)
+					{
+						secondLastOverlapped = lastOverlapped;
+					}
+					else
+					{
+						if (secondLastOverlapped)
+							this.pushInFractional(inst, xdir * sign, ydir * sign, secondLastOverlapped, 16);
+						return true;
+					}
+				}
+			}
+		}
+		inst.x = oldX;
+		inst.y = oldY;
 		inst.set_bbox_changed();
 		return false;
 	};
@@ -15046,14 +15087,13 @@ cr.system_object.prototype.loadFromJSON = function (o)
 		if (prevsol.select_all)
 		{
 			clonesol.select_all = true;
-			cr.clearArray(clonesol.else_instances);
 		}
 		else
 		{
 			clonesol.select_all = false;
 			cr.shallowAssignArray(clonesol.instances, prevsol.instances);
-			cr.shallowAssignArray(clonesol.else_instances, prevsol.else_instances);
 		}
+		cr.clearArray(clonesol.else_instances);
 	};
 	cr.type_popSol = function ()
 	{
@@ -15377,9 +15417,11 @@ cr.plugins_.Audio = function(runtime)
 		source["connect"](context["destination"]);
 		startSource(source);
 	};
+	document.addEventListener("pointerup", playQueuedAudio, true);
 	document.addEventListener("touchend", playQueuedAudio, true);
 	document.addEventListener("click", playQueuedAudio, true);
 	document.addEventListener("keydown", playQueuedAudio, true);
+	document.addEventListener("gamepadconnected", playQueuedAudio, true);
 	function dbToLinear(x)
 	{
 		var v = dbToLinear_nocap(x);
@@ -17175,7 +17217,8 @@ cr.plugins_.Audio = function(runtime)
 			else
 			{
 				try {
-					useOgg = !!(new Audio().canPlayType('audio/ogg; codecs="vorbis"'));
+					useOgg = !!(new Audio().canPlayType('audio/ogg; codecs="vorbis"')) &&
+								!this.runtime.isWindows10;
 				}
 				catch (e)
 				{
@@ -18376,7 +18419,7 @@ cr.plugins_.Browser = function(runtime)
 	var browserPluginReady = false;
 	document.addEventListener("DOMContentLoaded", function ()
 	{
-		if (window["C2_RegisterSW"] && navigator.serviceWorker)
+		if (window["C2_RegisterSW"] && navigator["serviceWorker"])
 		{
 			var offlineClientScript = document.createElement("script");
 			offlineClientScript.onload = function ()
@@ -18424,16 +18467,6 @@ cr.plugins_.Browser = function(runtime)
 			});
 			window.addEventListener("offline", function() {
 				self.runtime.trigger(cr.plugins_.Browser.prototype.cnds.OnOffline, self);
-			});
-		}
-		if (typeof window.applicationCache !== "undefined")
-		{
-			window.applicationCache.addEventListener('updateready', function() {
-				self.runtime.loadingprogress = 1;
-				self.runtime.trigger(cr.plugins_.Browser.prototype.cnds.OnUpdateReady, self);
-			});
-			window.applicationCache.addEventListener('progress', function(e) {
-				self.runtime.loadingprogress = (e["loaded"] / e["total"]) || 0;
 			});
 		}
 		if (!this.runtime.isDirectCanvas)
@@ -18499,7 +18532,7 @@ cr.plugins_.Browser = function(runtime)
 	};
 	instanceProto.onSWMessage = function (e)
 	{
-		var messageType = e.data.type;
+		var messageType = e["data"]["type"];
 		if (messageType === "downloading-update")
 			this.runtime.trigger(cr.plugins_.Browser.prototype.cnds.OnUpdateFound, this);
 		else if (messageType === "update-ready" || messageType === "update-pending")
@@ -18547,10 +18580,7 @@ cr.plugins_.Browser = function(runtime)
 	};
 	Cnds.prototype.IsDownloadingUpdate = function ()
 	{
-		if (typeof window["applicationCache"] === "undefined")
-			return false;
-		else
-			return window["applicationCache"]["status"] === window["applicationCache"]["DOWNLOADING"];
+		return false;		// deprecated
 	};
 	Cnds.prototype.OnUpdateReady = function ()
 	{
@@ -27842,6 +27872,14 @@ cr.behaviors.Platform = function(runtime)
 			{
 				this.runtime.pushOutSolid(this.inst, -this.downx, -this.downy, 10, false);
 			}
+			else if (this.runtime.pushOutSolidAxis(this.inst, this.rightx, this.righty, this.inst.width / 2))
+			{
+				this.runtime.registerCollision(this.inst, collobj);
+			}
+			else if (this.runtime.pushOutSolidAxis(this.inst, this.downx, this.downy, this.inst.height / 2))
+			{
+				this.runtime.registerCollision(this.inst, collobj);
+			}
 			else if (this.runtime.pushOutSolidNearest(this.inst, Math.max(this.inst.width, this.inst.height) / 2))
 			{
 				this.runtime.registerCollision(this.inst, collobj);
@@ -28160,7 +28198,7 @@ cr.behaviors.Platform = function(runtime)
 			this.runtime.trigger(cr.behaviors.Platform.prototype.cnds.OnFall, this.inst);
 			this.animMode = ANIMMODE_FALLING;
 		}
-		if (floor_ || landed)
+		if ((floor_ || landed) && this.dy >= 0)
 		{
 			if (this.animMode === ANIMMODE_FALLING || landed || (jump && this.dy === 0))
 			{
@@ -28964,19 +29002,19 @@ cr.behaviors.solid = function(runtime)
 	behaviorProto.acts = new Acts();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Keyboard,
+	cr.plugins_.Browser,
+	cr.plugins_.Audio,
 	cr.plugins_.gamepad,
-	cr.plugins_.Mouse,
+	cr.plugins_.Keyboard,
 	cr.plugins_.Particles,
-	cr.plugins_.Text,
-	cr.plugins_.TiledBg,
+	cr.plugins_.Mouse,
 	cr.plugins_.Sprite,
-	cr.plugins_.Spritefont2,
 	cr.plugins_.WebStorage,
+	cr.plugins_.TiledBg,
+	cr.plugins_.Spritefont2,
+	cr.plugins_.Text,
 	cr.plugins_.Touch,
 	cr.plugins_.Tilemap,
-	cr.plugins_.Audio,
-	cr.plugins_.Browser,
 	cr.behaviors.solid,
 	cr.behaviors.Platform,
 	cr.behaviors.LOS,
@@ -28989,19 +29027,20 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Flash,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.system_object.prototype.cnds.OnLayoutStart,
+	cr.system_object.prototype.acts.Wait,
 	cr.plugins_.Sprite.prototype.acts.Destroy,
 	cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
 	cr.plugins_.Sprite.prototype.exps.Y,
 	cr.plugins_.Sprite.prototype.acts.SetAnim,
 	cr.system_object.prototype.exps.choose,
 	cr.plugins_.Sprite.prototype.acts.SetPos,
-	cr.behaviors.Pin.prototype.acts.Pin,
 	cr.system_object.prototype.acts.SetVar,
+	cr.system_object.prototype.cnds.CompareVar,
+	cr.plugins_.Sprite.prototype.exps.X,
 	cr.system_object.prototype.cnds.EveryTick,
 	cr.behaviors.LOS.prototype.exps.Range,
 	cr.plugins_.Sprite.prototype.cnds.IsMirrored,
 	cr.system_object.prototype.exps.lerp,
-	cr.plugins_.Sprite.prototype.exps.X,
 	cr.plugins_.Keyboard.prototype.cnds.IsKeyDown,
 	cr.plugins_.Sprite.prototype.acts.SetMirrored,
 	cr.behaviors.Platform.prototype.acts.SimulateControl,
@@ -29028,6 +29067,7 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.solid.prototype.acts.SetEnabled,
 	cr.plugins_.Sprite.prototype.acts.SetAnimFrame,
 	cr.behaviors.Platform.prototype.cnds.OnLand,
+	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Sprite.prototype.acts.AddInstanceVar,
 	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
 	cr.behaviors.Platform.prototype.cnds.IsMoving,
@@ -29045,6 +29085,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio.prototype.cnds.OnEnded,
 	cr.plugins_.Text.prototype.acts.SetText,
 	cr.behaviors.Platform.prototype.acts.SetVectorX,
+	cr.behaviors.scrollto.prototype.acts.Shake,
 	cr.system_object.prototype.acts.GoToLayoutByName,
 	cr.plugins_.Sprite.prototype.acts.SetTowardPosition,
 	cr.plugins_.Touch.prototype.cnds.OnDoubleTapGestureObject,
@@ -29059,10 +29100,10 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Platform.prototype.acts.SetMaxSpeed,
 	cr.plugins_.Touch.prototype.cnds.IsTouchingObject,
 	cr.system_object.prototype.cnds.LayerVisible,
+	cr.system_object.prototype.acts.RestartLayout,
 	cr.plugins_.Touch.prototype.cnds.OnTouchObject,
 	cr.plugins_.Mouse.prototype.cnds.OnObjectClicked,
 	cr.plugins_.Sprite.prototype.acts.SetSize,
-	cr.system_object.prototype.cnds.CompareVar,
 	cr.plugins_.Audio.prototype.acts.SetSilent,
 	cr.system_object.prototype.acts.SetLayerVisible,
 	cr.system_object.prototype.acts.SetGroupActive,
