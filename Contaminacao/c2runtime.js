@@ -29002,18 +29002,18 @@ cr.behaviors.solid = function(runtime)
 	behaviorProto.acts = new Acts();
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Browser,
 	cr.plugins_.Audio,
-	cr.plugins_.Keyboard,
-	cr.plugins_.Particles,
-	cr.plugins_.Mouse,
+	cr.plugins_.Browser,
 	cr.plugins_.gamepad,
-	cr.plugins_.WebStorage,
+	cr.plugins_.Particles,
+	cr.plugins_.Keyboard,
+	cr.plugins_.Mouse,
 	cr.plugins_.Text,
-	cr.plugins_.Spritefont2,
 	cr.plugins_.Sprite,
+	cr.plugins_.Spritefont2,
 	cr.plugins_.TiledBg,
 	cr.plugins_.Touch,
+	cr.plugins_.WebStorage,
 	cr.plugins_.Tilemap,
 	cr.behaviors.solid,
 	cr.behaviors.Platform,
@@ -29069,7 +29069,6 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Platform.prototype.cnds.OnLand,
 	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Sprite.prototype.acts.AddInstanceVar,
-	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
 	cr.behaviors.Platform.prototype.cnds.IsMoving,
 	cr.plugins_.Sprite.prototype.exps.AnimationName,
 	cr.plugins_.Sprite.prototype.acts.SetAngle,
@@ -29100,6 +29099,8 @@ cr.getObjectRefTable = function () { return [
 	cr.behaviors.Platform.prototype.acts.SetMaxSpeed,
 	cr.plugins_.Touch.prototype.cnds.IsTouchingObject,
 	cr.system_object.prototype.cnds.LayerVisible,
+	cr.plugins_.Touch.prototype.cnds.OnTapGestureObject,
+	cr.plugins_.Sprite.prototype.cnds.IsVisible,
 	cr.system_object.prototype.acts.RestartLayout,
 	cr.plugins_.Sprite.prototype.acts.ToggleBoolInstanceVar,
 	cr.plugins_.Touch.prototype.cnds.OnTouchObject,
@@ -29118,6 +29119,8 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.plugins_.Sprite.prototype.exps.Width,
 	cr.system_object.prototype.acts.SetTimescale,
-	cr.system_object.prototype.exps.timescale
+	cr.system_object.prototype.exps.timescale,
+	cr.plugins_.Sprite.prototype.acts.SetVisible,
+	cr.system_object.prototype.acts.SubVar
 ];};
 
