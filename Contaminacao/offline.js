@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1540946682,
+	"version": 1541508267,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -96,6 +96,11 @@
 		"images/itouch-sheet0.png",
 		"images/itouch-sheet1.png",
 		"images/coltutor-sheet0.png",
+		"images/cutscene-sheet0.png",
+		"images/cutscene-sheet1.png",
+		"images/tutorialtiro-sheet0.png",
+		"images/colchektiro-sheet0.png",
+		"images/sfgripe.png",
 		"media/andar.m4a",
 		"media/andar.ogg",
 		"media/cela.m4a",
