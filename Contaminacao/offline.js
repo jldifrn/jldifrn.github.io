@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1541508267,
+	"version": 1543087912,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -88,8 +88,6 @@
 		"images/plsine-sheet0.png",
 		"images/bpause-sheet0.png",
 		"images/sprite-sheet0.png",
-		"images/sprite2-sheet0.png",
-		"images/sprite3-sheet0.png",
 		"images/telapause-sheet0.png",
 		"images/hbarramoedas2-sheet0.png",
 		"images/hbarratiro-sheet0.png",
