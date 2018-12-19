@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1545106798,
+	"version": 1545189654,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -174,6 +174,10 @@
 		"media/morte2.ogg",
 		"media/tt.m4a",
 		"media/tt.ogg",
+		"media/tirocoleta.m4a",
+		"media/tirocoleta.ogg",
+		"media/click2.m4a",
+		"media/click2.ogg",
 		"media/bgc22clean.m4a",
 		"media/bgc22clean.ogg",
 		"media/bgggclean1.m4a",
